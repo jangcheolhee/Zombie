@@ -138,7 +138,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 991318832}
+    m_TransformParent: {fileID: 1929272223}
     m_Modifications:
     - target: {fileID: 1784282725167592, guid: 13259943c4d634186ac994d570bb3253, type: 3}
       propertyPath: m_Name
@@ -146,15 +146,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4126983702692336, guid: 13259943c4d634186ac994d570bb3253, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: -0.2
       objectReference: {fileID: 0}
     - target: {fileID: 4126983702692336, guid: 13259943c4d634186ac994d570bb3253, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.04
+      value: -0.04
       objectReference: {fileID: 0}
     - target: {fileID: 4126983702692336, guid: 13259943c4d634186ac994d570bb3253, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0.31
+      value: 0.17
       objectReference: {fileID: 0}
     - target: {fileID: 4126983702692336, guid: 13259943c4d634186ac994d570bb3253, type: 3}
       propertyPath: m_LocalRotation.w
@@ -552,6 +552,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gun: {fileID: 1486102100}
+  gunPivot: {fileID: 1929272223}
+  leftHandleMount: {fileID: 1819152233}
+  rightHandleMount: {fileID: 1554485783}
 --- !u!198 &1380053971 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 198000012944515248, guid: 74d744994bc414c37bfda957f1d57118,
@@ -799,6 +802,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 105196344}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1554485783 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4789895822770736, guid: 13259943c4d634186ac994d570bb3253,
+    type: 3}
+  m_PrefabInstance: {fileID: 105196344}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1776144975
 GameObject:
   m_ObjectHideFlags: 3
@@ -894,6 +903,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac0b09e7857660247b1477e93731de29, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &1819152233 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4355249862128598, guid: 13259943c4d634186ac994d570bb3253,
+    type: 3}
+  m_PrefabInstance: {fileID: 105196344}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1892406140
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -956,6 +971,38 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 49b04053ea2dc49ae8eae12418134ef1, type: 3}
+--- !u!1 &1929272222
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1929272223}
+  m_Layer: 0
+  m_Name: gunPivot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1929272223
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1929272222}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1486102103}
+  m_Father: {fileID: 991318832}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1983610771
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1277,7 +1324,7 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4454920613379847860, guid: 27211697319b1864f88140523f26a5e5,
         type: 3}
       insertIndex: -1
-      addedObject: {fileID: 1486102103}
+      addedObject: {fileID: 1929272223}
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 4454920613380074132, guid: 27211697319b1864f88140523f26a5e5,
         type: 3}

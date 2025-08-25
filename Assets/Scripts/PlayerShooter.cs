@@ -7,6 +7,10 @@ public class PlayerShooter : MonoBehaviour
     private PlayerInput input;
     private Animator animator;
 
+    public Transform gunPivot;
+    public Transform leftHandleMount;
+       public Transform rightHandleMount;
+
     private void Awake()
     {
         input = GetComponent<PlayerInput>();
@@ -25,5 +29,19 @@ public class PlayerShooter : MonoBehaviour
                 animator.SetTrigger(IdReload);
             }
         }
+    }
+    private void OnAnimatorIK(int layerIndex)
+    {
+        gunPivot.position = animator.GetIKHintPosition(AvatarIKHint.RightElbow);
+        animator.SetIKPositionWeight(AvatarIKGoal.LeftHand,1f);
+        animator.SetIKRotationWeight(AvatarIKGoal.LeftHand, 1f);
+        animator.SetIKPosition(AvatarIKGoal.LeftHand, leftHandleMount.position);
+        animator.SetIKRotation(AvatarIKGoal.LeftHand, leftHandleMount.rotation);
+
+        animator.SetIKPositionWeight(AvatarIKGoal.RightHand, 1f);
+        animator.SetIKRotationWeight(AvatarIKGoal.RightHand, 1f);
+        animator.SetIKPosition(AvatarIKGoal.RightHand, rightHandleMount.position);
+        animator.SetIKRotation(AvatarIKGoal.RightHand, rightHandleMount.rotation);
+
     }
 }
