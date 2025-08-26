@@ -5,7 +5,7 @@ using UnityEngine;
 public class LivingEntity : MonoBehaviour, IDamagable
 {
     public float MaxHealth = 100f;
-    public float Health {  get; private set; }
+    public float Health {  get; protected set; }
     public bool IsDead { get; private set; }
     public event Action OnDeath;
 
@@ -14,10 +14,10 @@ public class LivingEntity : MonoBehaviour, IDamagable
         IsDead = false;
         Health = MaxHealth;
     }
-    public virtual void OnDamge(float damage, Vector3 hitPoing, Vector3 hitNormal)
+    public virtual void OnDamage(float damage, Vector3 hitPoint, Vector3 hitNormal)
     {
         Health -= damage;
-        if(Health < 0 && !IsDead)
+        if(Health <= 0 && !IsDead)
         {
             Die();
         }
@@ -27,4 +27,6 @@ public class LivingEntity : MonoBehaviour, IDamagable
         OnDeath?.Invoke();
         IsDead = true;
     }
+    
+
 }

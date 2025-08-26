@@ -60,7 +60,7 @@ public class Gun : MonoBehaviour
         lastFireTime = 0f;
         CurrentState = State.Ready;
     }
-    private IEnumerator ShotEffect(Vector3 hitpostion)
+    private IEnumerator ShotEffect(Vector3 hitposition)
     {
         audioSource.PlayOneShot(gunData.shootClip);
 
@@ -70,7 +70,7 @@ public class Gun : MonoBehaviour
         lineRenderer.enabled = true;
         lineRenderer.SetPosition(0, firePosition.position);
 
-        lineRenderer.SetPosition(1, hitpostion);
+        lineRenderer.SetPosition(1, hitposition);
 
         yield return new WaitForSeconds(0.2f);
         lineRenderer.enabled = false;
@@ -125,7 +125,7 @@ public class Gun : MonoBehaviour
             var target = hit.collider.GetComponent<IDamagable>();
             if (target != null)
             {
-                target.OnDamge(gunData.damage, hitPosition, hit.normal);
+                target.OnDamage(gunData.damage, hitPosition, hit.normal);
             }
         }
         else
@@ -169,5 +169,10 @@ public class Gun : MonoBehaviour
 
         CurrentState = State.Ready;
 
+    }
+    public void AddAmmo(int amount)
+    {
+        ammoRemain += Mathf.Min(ammoRemain + amount, gunData.startAmmoRemain);
+        
     }
 }
